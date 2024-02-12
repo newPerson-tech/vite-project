@@ -1,0 +1,67 @@
+@use "sass:math";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+$dna-row-width: 300px;
+$dna-diameter: 10px;
+$dna-anim-duration: 2s;
+$dna-taming-func: ease;
+$dna-count: 100;
+@layer components {
+  .dna-wrap {
+    @apply flex flex-col gap-1;
+  }
+  .dna-row {
+    @apply relative after:bg-red-500 after:h-full  after:rounded-full after:absolute before:bg-blue-600 before:h-full  before:rounded-full before:absolute before:right-0;
+  }
+}
+
+.dna {
+  &-wrap {
+    width: $dna-row-width;
+  }
+  &-row {
+    height: $dna-diameter;
+    &:after,
+    &:before {
+      width: $dna-diameter;
+    }
+    &:after {
+      animation: dna-circle-to-right $dna-anim-duration $dna-taming-func
+        backwards infinite;
+    }
+    &:before {
+      animation: dna-circle-to-left $dna-anim-duration $dna-taming-func
+        backwards infinite;
+    }
+  }
+}
+
+@for $i from 1 through $dna-count {
+  .dna-row:nth-child(#{$i}) {
+    &:after,
+    &:before {
+      animation-delay: #{$i * 0.04}s;
+    }
+  }
+}
+
+@keyframes dna-circle-to-right {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate($dna-row-width - $dna-diameter);
+  }
+}
+
+@keyframes dna-circle-to-left {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-$dna-row-width + $dna-diameter);
+  }
+}

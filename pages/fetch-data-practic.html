@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <div class="navbar">
+        <div class="navbar-start">
+          <a class="navbar-item" href="">Portfolio</a>
+        </div>
+        <div class="navbar-center !items-center">
+          <a class="navbar-item" href="../index.html">Home</a>
+          <a class="navbar-item" href="./about.html">About</a>
+          <a class="navbar-item" href="./calculator.html">Calculator</a>
+          <div class="dropdown dropdown-hover">
+            <label class="btn btn-solid-primary my-2" tabindex="0"
+              >Practic</label
+            >
+            <div class="dropdown-menu">
+              <a class="dropdown-item text-sm" href="./loop-practic.html"
+                >Loop</a
+              >
+              <a class="dropdown-item text-sm dropdown-active"
+                >Fetch data practic</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-grow flex-col items-center px-10">
+        <div class="alert">
+          <div class="flex flex-col">
+            <span>Fetch data practic</span>
+            <span class="text-content2">page</span>
+          </div>
+        </div>
+        <!-- <div id="map" class="w-full h-full flex-grow rounded"></div> -->
+        <!-- create form -->
+        <div class="mt-5">
+          <label class="text-xl cursor-pointer select-none" for="modal-1">
+            <span>Додати задачу</span>
+            <div class="btn btn-outline btn-circle">+</div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
+          <div class="modal">
+            <label class="modal-overlay" for="modal-1"></label>
+            <div class="modal-content w-1/2 flex flex-col gap-5">
+              <label
+                for="modal-1"
+                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                >✕</label
+              >
+              <h2 class="text-xl">Опиши свою задачу</h2>
+              <form id="taskForm" class="flex flex-col gap-5">
+                <input
+                  id="taskTitle"
+                  class="input max-w-full"
+                  required
+                  placeholder="Заголовок"
+                />
+                <textarea
+                  id="taskDescription"
+                  class="textarea max-w-full"
+                  placeholder="Опис задачі"
+                ></textarea>
+                <select id="taskPriority" class="select select-solid">
+                  <option value="high">Термінова</option>
+                  <option value="middle" selected>Звичайна</option>
+                  <option value="low">Низька</option>
+                </select>
+                <button for="modal-1" class="btn btn-block">
+                  Створити задачу
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="grid grdi-cols-1 md:grid-cols-12 gap-4 mt-10 mb-5">
+          <div class="col-span-5">
+            <h2 class="badge badge-flat-primary badge-xl mb-5">
+              Зробити задачі
+            </h2>
+            <div id="cardWrapToDo" class="flex flex-col gap-3"></div>
+          </div>
+          <div
+            class="divider divider-vertical col-span-2 hidden md:flex h-full mx-auto"
+          ></div>
+          <div class="col-span-5">
+            <h2 class="badge badge-flat-success badge-xl mb-5">
+              Зроблені задачі
+            </h2>
+            <div id="cardWrapDone" class="flex flex-col gap-3"></div>
+          </div>
+        </div>
+        <!-- create form end -->
+      </div>
+    </div>
+    <script type="module" src="../src/fetch-data-practic.js"></script>
+  </body>
+</html>

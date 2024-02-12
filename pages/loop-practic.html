@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-start">
+        <a class="navbar-item" href="">Portfolio</a>
+      </div>
+      <div class="navbar-center !items-center">
+        <a class="navbar-item" href="../index.html">Home</a>
+        <a class="navbar-item" href="./about.html">About</a>
+        <a class="navbar-item" href="./calculator.html">Calculator</a>
+        <div class="dropdown dropdown-hover">
+          <label class="btn btn-solid-primary my-2" tabindex="0">Practic</label>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-sm dropdown-active">Loop</a>
+            <a class="dropdown-item text-sm" href="./fetch-data-practic.html"
+              >Fetch data practic</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-10 items-center justify-center px-10 mt-10">
+      <div class="alert">
+        <div class="flex flex-col">
+          <span>Loop practic</span>
+          <span class="text-content2">page</span>
+        </div>
+      </div>
+      <div class="card max-w-none w-auto">
+        <div class="card-body">
+          <div id="dnaWrap" class="dna-wrap"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../src/loop-practic.js"></script>
+  </body>
+</html>
